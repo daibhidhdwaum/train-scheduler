@@ -11,18 +11,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>
     <script src="https://david-project-efba4/firebasejs/4.12.0/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald|Ubuntu+Condensed" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
+        <div class="jumbotron bg-dark header">
+            <div class="container bg-dark heading">
                 <h1 class="display-4">Train Scheduler</h1>
             </div>
         </div>
     
         <div class="card">
-            <div class="card-header">
+            <div class="card-header  bg-dark">
                 Current Train Schedule
             </div>
                 <table class="table">
@@ -48,8 +49,8 @@
                 </table>
         </div>
 
-        <div class="card">
-            <div class="card-header">
+        <div class="card user-input">
+            <div class="card-header bg-dark">
                Add Train
             </div>
                 <form>
@@ -70,7 +71,7 @@
                         <input type="text" class="form-control" id="frequency">
                     </div>
                    
-                    <button type="submit" class="btn">Submit</button>
+                    <button type="submit" class="btn bg-dark">Submit</button>
                 </form>
             </div>
     

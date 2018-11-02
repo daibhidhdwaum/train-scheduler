@@ -1,0 +1,43 @@
+/*------------------------------
+font-family: 'Oswald', sans-serif;
+font-family: 'Ubuntu Condensed', sans-serif;
+font-family: 'Montserrat', sans-serif;
+--------------------------------*/
+
+.header, .container {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.card-header {
+    color: white;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.user-input {
+    margin-top: 40px;
+}
+
+.btn {
+    color: white;
+}
+
+label, th {
+    color: #000515;
+}
+
+label {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.form-group, .btn {
+    margin: 20px;
+}
