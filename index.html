@@ -3,22 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Train Scheduler</title>
+    <title>The Last Stop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--link and script sources-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>
-    <script src="https://david-project-efba4/firebasejs/4.12.0/firebase.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald|Ubuntu+Condensed" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>-->
+    
+    
 </head>
 <body>
     <div class="container">
         
         <div class="jumbotron bg-dark header">
             <div class="container bg-dark heading">
-                <h1 class="display-4">Train Scheduler</h1>
+                <h1 class="display-4">The Last Stop</h1>
+                <p class="lead">A Train to Nowhere</p>
             </div>
         </div>
     
@@ -71,14 +74,14 @@
                         <input type="text" class="form-control" id="frequency">
                     </div>
                    
-                    <button type="submit" class="btn bg-dark">Submit</button>
+                    <button type="submit" id="add-train" class="btn bg-dark">Submit</button>
                 </form>
-            </div>
+        </div>
     
     </div>
 
 
-    
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
 </html>
