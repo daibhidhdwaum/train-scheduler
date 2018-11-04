@@ -41,3 +41,7 @@ label {
 .form-group, .btn {
     margin: 20px;
 }
+
+td {
+    color: #000515;
+}

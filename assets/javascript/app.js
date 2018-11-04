@@ -29,12 +29,14 @@ $(document).ready(function(){
         firstTrain = $("#first-train-time").val();
         frequency = $("#frequency").val();
 
-        database.ref().push({
+        var newTrain = {
             trainName: trainName,
             destination: destination,
             firstTrain: firstTrain,
             frequency: frequency
-        });
+        };
+
+        database.ref().push(newTrain);
 
         $("#train-name").val("");
         $("#destination").val("");
@@ -46,15 +48,26 @@ $(document).ready(function(){
 
     database.ref().on("child_added", function(childSnapshot) {
 
+        childTrainName = childSnapshot.val().trainName;
+        childDestination = childSnapshot.val().destination;
+        childFirstTrain = childSnapshot.val().firstTrain;
+        childFrequency = childSnapshot.val().frequency;
+        //childNextArrival = childSnapshot.val().nextArrival;
+
         console.log(childSnapshot.val().trainName);
         console.log(childSnapshot.val().destination);
         console.log(parseInt(childSnapshot.val().firstTrain));
         console.log(parseInt(childSnapshot.val().frequency));
 
-        $(".name").text(trainName);
-        $(".destination").text(destination);
-        $(".first-train").text(firstTrain);
-        $(".frequency").text(frequency);
+        var newRow = $("<tr>").append(
+            $("<td>").text(childTrainName),
+            $("<td>").text(childDestination),
+            $("<td>").text(childFrequency),
+           // $("<td>").text(nextArrival),
+           // $("<td>").text(minutesAway)
+        );
+
+        $("#train-table > tbody").append(newRow);
     });
 
    
