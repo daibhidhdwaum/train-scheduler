@@ -3,22 +3,38 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Ubuntu Condensed', sans-serif;
 font-family: 'Montserrat', sans-serif;
 --------------------------------*/
-
-.header, .container {
-    color: white;
-    font-family: 'Oswald', sans-serif;
+.container {
+    padding: 20px;
 }
 
-.container {
-    margin-top: 20px;
+.header {
+    background-image: url(../images/trains.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(90%);
+}
+
+.heading {
+    background-color: transparent;
+}
+
+.page-title {
+    color: white;
+    font-size: 60px;
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    filter: brightness(100%);
+}
+
+.lead {
+    color: white;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-header {
     color: white;
-}
-
-p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 .user-input {
@@ -40,8 +56,14 @@ label {
 
 .form-group, .btn {
     margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+th {
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 td {
     color: #000515;
+    font-family: 'Montserrat', sans-serif;
 }

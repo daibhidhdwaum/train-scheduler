@@ -11,16 +11,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald|Ubuntu+Condensed" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     
     
 </head>
 <body>
+
     <div class="container">
         
         <div class="jumbotron bg-dark header">
-            <div class="container bg-dark heading">
-                <h1 class="display-4">The Last Stop</h1>
+            <div class="heading">
+                <h1 class="page-title">The Last Stop</h1>
                 <p class="lead">A Train to Nowhere</p>
             </div>
         </div>
@@ -41,7 +42,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="name-display"></td>
+                        <td class="number-display"></td>
                         <td class="destination-display"></td>
                         <td class="frequency-display"></td>
                         <td class="next-arrival-display"></td>
@@ -78,8 +79,8 @@
                 </form>
         </div>
     
+    
     </div>
-
     
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="assets/javascript/app.js"></script>
