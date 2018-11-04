@@ -35,27 +35,27 @@ $(document).ready(function(){
             firstTrain: firstTrain,
             frequency: frequency
         });
+
+        $("#train-name").val("");
+        $("#destination").val("");
+        $("#first-train-time").val("");
+        $("#frequency").val("");
     });
 
-    /*
+    
 
-    database.ref().on("value", function(snapshot) {
+    database.ref().on("child_added", function(childSnapshot) {
 
-        trainName = snapshot.val().trainName;
-        destination = snapshot.val().destination;
-        firstTrain = parseInt(snapshot.val().firstTrain);
-        frequency = parseInt(snapshot.val().frequency);
-
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrain);
-        console.log(frequency);
+        console.log(childSnapshot.val().trainName);
+        console.log(childSnapshot.val().destination);
+        console.log(parseInt(childSnapshot.val().firstTrain));
+        console.log(parseInt(childSnapshot.val().frequency));
 
         $(".name").text(trainName);
         $(".destination").text(destination);
         $(".first-train").text(firstTrain);
         $(".frequency").text(frequency);
-    });*/
+    });
 
    
 
