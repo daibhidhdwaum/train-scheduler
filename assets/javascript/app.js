@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     firebase.initializeApp(config);
 
-    // Get a reference to the database service
+     // Get a reference to the database service
     var database = firebase.database();
 
     //set variables
@@ -18,25 +18,46 @@ $(document).ready(function(){
     var destination = " ";
     var firstTrain = 0;
     var frequency = 0;
-    var clickCounter = 0;
 
-    //capture click event
+     //capture click event and log to database
     $("#add-train").on("click", function(event){
 
         event.preventDefault();
 
-        $("#train-name").val();
-        $("destination").val();
-        $("first-train-time").val();
-        $("frequency").val();
+        trainName = $("#train-name").val();
+        destination = $("#destination").val();
+        firstTrain = $("#first-train-time").val();
+        frequency = $("#frequency").val();
 
-        database.ref().set({
-            TrainName: trainName,
+        database.ref().push({
+            trainName: trainName,
             destination: destination,
             firstTrain: firstTrain,
             frequency: frequency
-        })
-    })
+        });
+    });
+
+    /*
+
+    database.ref().on("value", function(snapshot) {
+
+        trainName = snapshot.val().trainName;
+        destination = snapshot.val().destination;
+        firstTrain = parseInt(snapshot.val().firstTrain);
+        frequency = parseInt(snapshot.val().frequency);
+
+        console.log(trainName);
+        console.log(destination);
+        console.log(firstTrain);
+        console.log(frequency);
+
+        $(".name").text(trainName);
+        $(".destination").text(destination);
+        $(".first-train").text(firstTrain);
+        $(".frequency").text(frequency);
+    });*/
+
+   
 
     
     
