@@ -18,8 +18,6 @@ $(document).ready(function(){
     var destination = " ";
     var firstTrain = "HH:mm";
     var frequency = 0;
-    var nextArrival = 0;
-    var minutesAway = 0;
     var currentTime = moment();
 
     //administrators can submit train name, destination, first train (in military time), frequency in minutes
@@ -33,40 +31,14 @@ $(document).ready(function(){
         firstTrain = $("#first-train-time").val().trim();
         frequency = $("#frequency").val().trim();
 
-        
-
-             //connect to moment.js
-        var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
-        
-        console.log("this is the first train " + firstTrain);
-        console.log("this is the first train converted " + firstTrainConverted);
-
-        currentTime
-        console.log("current time: " + moment(currentTime).format("hh:mm"));
-
-        var timeDiff = moment().diff(moment(firstTrainConverted), "minutes");
-        timeDiff.toString();
-        console.log("difference in time " + timeDiff);
-
-        var remainder = timeDiff % frequency;
-        console.log("remainder: " + remainder);
-
-        minutesAway = frequency - remainder;
-        console.log("minutes away: " + minutesAway);
-
-        nextArrival = moment().add(minutesAway, "minutes");
-        console.log("next arrival " + moment(nextArrival).format("hh:mm"));
-
         var newTrain = {
             trainName: trainName,
             destination: destination,
             firstTrain: firstTrain,
-            frequency: frequency,
+            frequency: frequency
         };
 
-        database.ref().push(newTrain);
-
- 
+         database.ref().push(newTrain);
 
         //clears form inputs
         $("#train-name").val("");
@@ -76,32 +48,47 @@ $(document).ready(function(){
     });
       
 
-   
-
-    
-
-    database.ref().on("child_added", function(childSnapshot) {
+database.ref().on("child_added", function(childSnapshot) {
 
         childTrainName = childSnapshot.val().trainName;
         childDestination = childSnapshot.val().destination;
         childFirstTrain = childSnapshot.val().firstTrain;
         childFrequency = childSnapshot.val().frequency;
-        NextArrival = childSnapshot.val().nextArrival;
-        MinutesAway = childSnapshot.val().minutesAway;
+    
 
         console.log(childSnapshot.val().trainName);
         console.log(childSnapshot.val().destination);
         console.log(parseInt(childSnapshot.val().firstTrain));
         console.log(parseInt(childSnapshot.val().frequency));
-        console.log(parseInt(childSnapshot.val().nextArrival));
-        console.log(parseInt(childSnapshot.val().minutesAway));
+
+                      //connect to moment.js
+        var firstTrainConverted = moment(childFirstTrain, "HH:mm").subtract(1, "years");
+        
+        console.log("this is the first train " + childFirstTrain);
+        console.log("this is the first train converted " + firstTrainConverted);
+
+        currentTime
+        console.log("current time: " + moment().format("HH:mm"));
+
+        var timeDiff = moment().diff(moment(firstTrainConverted), "minutes");
+        timeDiff.toString();
+        console.log("difference in time " + timeDiff);
+
+        var remainder = timeDiff % childFrequency;
+        console.log("remainder: " + remainder);
+
+        var childMinutesAway = childFrequency - remainder;
+        console.log("minutes away: " + childMinutesAway);
+
+        childNextArrival = moment().add(childMinutesAway, "minutes").format("HH:mm");
+        console.log("next arrival " + moment(childNextArrival).format("HH:mm"));
 
         var newRow = $("<tr>").append(
             $("<td>").text(childTrainName),
             $("<td>").text(childDestination),
             $("<td>").text(childFrequency),
-            $("<td>").text(nextArrival),
-            $("<td>").text(minutesAway)
+            $("<td>").text(childNextArrival),
+            $("<td>").text(childMinutesAway)
         );
 
         $("#train-table > tbody").append(newRow);
