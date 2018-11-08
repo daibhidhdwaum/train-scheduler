@@ -2,28 +2,40 @@
 font-family: 'Oswald', sans-serif;
 font-family: 'Ubuntu Condensed', sans-serif;
 font-family: 'Montserrat', sans-serif;
+font-family: 'Cabin', sans-serif;
+font-family: 'Lato', sans-serif;
 --------------------------------*/
+body {
+    background-color: #f3fdfe;
+}
+
+/*--------------------
+header
+---------------------*/
+
 .container {
-    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .header {
-    background-image: url(../images/trains.jpg);
+    background-image: url(../images/flyingScotsman2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    filter: contrast(90%);
+    padding-bottom: 20px;
 }
 
 .heading {
     background-color: transparent;
+    padding-right: 20px;
+    padding-top: 8%;
 }
 
 .page-title {
     color: white;
     font-size: 60px;
     text-align: right;
-    font-family: 'Oswald', sans-serif;
-    filter: brightness(100%);
+    font-family: 'Lato', sans-serif;
 }
 
 .lead {
@@ -32,9 +44,12 @@ font-family: 'Montserrat', sans-serif;
     font-family: 'Montserrat', sans-serif;
 }
 
-.card-header {
-    color: white;
-    font-family: 'Ubuntu Condensed', sans-serif;
+/*-----------------
+table/form
+------------------*/
+
+.card {
+    clear: both;
 }
 
 .user-input {
@@ -56,14 +71,21 @@ label {
 
 .form-group, .btn {
     margin: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cabin', sans-serif;
 }
 
 th {
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 td {
     color: #000515;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cabin', sans-serif;
 }
+
+.card-header {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    background-color: #0e3137;
+}
+
